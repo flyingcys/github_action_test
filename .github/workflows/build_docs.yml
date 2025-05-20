@@ -66,3 +66,15 @@ jobs:
         run: docs/build.py html
       - name: Remove .doctrees
         run: rm -rf docs/build/html/.doctrees
+      - name: Deploy to subfolder
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        with:
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+          repository-name: flyingcys/docs
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs/build/html  # The folder the action should deploy.
+          target-folder: .
+          git-config-name: flyingcys
+          git-config-email: flyingcys@163.com
+          single-commit: true

@@ -40,7 +40,7 @@ def run(args):
     cpu = os.cpu_count()
 
     base_dir = os.path.abspath(os.path.dirname(__file__))
-    output_dir = os.path.join(base_dir, cfg_default_output_dir)
+    output_dir = os.path.join(base_dir, cfg_default_output_dir, 'html')
 
     remove_dir(output_dir)
 
