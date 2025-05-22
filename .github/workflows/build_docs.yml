@@ -73,7 +73,7 @@ jobs:
           repository-name: flyingcys/docs
           branch: gh-pages # The branch the action should deploy to.
           folder: docs/build/html  # The folder the action should deploy.
-          target-folder: .
+          target-folder: ./docs
           git-config-name: flyingcys
           git-config-email: flyingcys@163.com
           single-commit: true
